@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div>
+      <h1>Hello world from HTML</h1>
+    </div>
+    <div id="root"></div>
+    <h1>Top of the root-2 & root-3</h1>
+    <div id="root-2"></div>
+    <div id="root-3">
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+      <h1>Divanshu was here</h1>
+    </div>
+    <h1>Bottom of the root-2 & root-3</h1>
+
+    <script>
+      let heading = document.createElement("h1");
+      heading.innerHTML = "Hello world from Javascript";
+      let root = document.getElementById("root");
+      root.appendChild(heading);
+    </script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="./App.js">
+
+    </script>
+  </body>
+</html>
