@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react";
+import ReactDOM from "react-dom";
 
 let heading2 = React.createElement("h1", {}, "Hello World from React");
 let root2 = ReactDOM.createRoot(document.getElementById("root-2"));
