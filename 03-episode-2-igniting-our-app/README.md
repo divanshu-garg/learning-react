@@ -82,3 +82,5 @@ we have got the react locally in our project inside node modules but we need to 
 
 when trying to run our code right now we might face an error. we have used import statement in our App.js file which is not normally supported in javascript.
 - so we need to the the browser that our script is not a normal browser script but a module. to do this add a `type = module` attribute to our script in the index.html file
+
+# At this point I faced a bug while trying to build project using parcel for the first time with npm. scratched my head on it for 2+ hours and finally settled with switching from npm to yarn. works fine finally with yarn but still face the same bug with npm
