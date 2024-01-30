@@ -1,6 +1,6 @@
 # I'm currently learning react and this is where I save all my code and progress for the same
 
-*** I will be adding all the small projects that I make for learning here itself ***
+** I will be adding all the small projects that I make for learning here itself **
 
 ## some small project ideas:
 
