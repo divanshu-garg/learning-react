@@ -1,11 +1,19 @@
 {
   "name": "03-episode-2-igniting-our-app",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "browserlist": "^1.0.1",
     "parcel-bundler": "^1.12.5"
   },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ],
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },  
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -1,5 +1,7 @@
 # some notes
 
+### Interview question: what makes react app fast. tell about the dependencies and the features of bundlers like parcel in detail
+
 - React is not just fast due to itself but due to the so much supplementary code written by other developers that makes it fast
 - npm does not stand for node package manager
 
@@ -84,3 +86,55 @@ when trying to run our code right now we might face an error. we have used impor
 - so we need to the the browser that our script is not a normal browser script but a module. to do this add a `type = module` attribute to our script in the index.html file
 
 # At this point I faced a bug while trying to build project using parcel for the first time with npm. scratched my head on it for 2+ hours and finally settled with switching from npm to yarn. works fine finally with yarn but still face the same bug with npm
+
+### Benefits of parcel bundler
+
+- Dev Build
+- Local Server
+- HMR = Hot Module Replacement
+- File Watching Algorithm (written in C++): website dynamically update without needing to reload (not working for me, have to reload manually)
+- Caching: faster builds after the first build
+- Image Optimization
+- Minification
+- Compressing
+- Bundling
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling- making the code supported in all the different browsers and their oldest of versions as well
+- Better error handling
+- Diagnostics
+- hosting on HTTPS instead of HTTP
+- Tree Shaking- remove unused code
+- Different dev and production bundles
+
+** Read parcel's documentation to know more **
+
+
+
+### building prod build using parcel (an error you'll face)
+
+to make a prod build run
+
+```
+npx parcel build index.html
+```
+
+or a similar equivalent in yarn
+
+but when you do it, you will face an error if there is something different in main: "filename.js" in the package.json file which means that is the main entrypoint to your app
+
+but in parcel we give the entrypoint in the command itself so they will conflict with each other. so, delete that specific `main: "filename"` code from your package.json to not face an error while running npx parcel build index.html
+
+So, I've faced 3 errors till date in this episode:
+
+1) adding type= module in script in index.html because we use import statements in react
+2) while creating node modules using npm then igniting using parcel. don't know the reason but just using yarn instead of npm overall fixes this issue, clear all the dist, node-modules or cache dirs created using npm
+3) while making a prod build remove main: "filename.js" from package.json file to avoid any conflicts for entrypoint
+
+### Browserslist
+
+it is a package that helps your project to be supported on a wide variety of browsers and their versions. it helps to make your code compatible with older browsers and oldest versions of browsers
+
+go through the readme file in browserlist github. 
+
+I can add it directly to the package.json file and start using this package
