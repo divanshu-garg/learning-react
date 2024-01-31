@@ -2,7 +2,8 @@
 
 ### Interview question: what makes react app fast. tell about the dependencies and the features of bundlers like parcel in detail
 
-- React is not just fast due to itself but due to the so much supplementary code written by other developers that makes it fast
+- React is not just fast due to itself but due to the so much supplementary code written by other developers that makes it fast. 
+-side note for myself: jsx makes react fast too in a way
 - npm does not stand for node package manager
 
 **-adding npm to our project using npm init**

@@ -1,0 +1,12 @@
+{
+  "name": "episode-3",
+  "version": "1.0.0",
+  "main": "App.js",
+  "author": "Divanshu",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
