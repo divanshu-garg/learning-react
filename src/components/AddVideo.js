@@ -1,33 +1,29 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./AddVideo.css";
 
-const initialVideoState = {
-  time: "1 year ago",
-  channel: "Coder Dost",
-  verified: true,
-  title: "",
-  views: "",
-};
+function AddVideo({ addVideo, video, setVideo, editMode, updateVideo, resetVideoState }) {
+  // const [video, setVideo] = useState(initialVideoState);
 
-function AddVideo({ addVideo, editableVideo, updateVideo }) {
-  const [video, setVideo] = useState(initialVideoState);
-  
-  useEffect(()=> {
-    if(editableVideo) setVideo(editableVideo);
-  console.log("effect hook used");
-  }
-    , [editableVideo])
+  // useEffect(()=> {
+  // if(editableVideo) setVideo(editableVideo);
+  // console.log("effect hook used");
+  // }
+  //   , [editableVideo])
 
   function handleSubmit(e) {
     e.preventDefault();
-    if(editableVideo){
-        updateVideo(video);
-    }else{
+    if (!video.title.trim() || !video.views.trim()) {
+      alert("Please fill in all fields");
+      return;
+    }
+    if (editMode) {
+      updateVideo(video);
+    } else {
       addVideo(video);
     }
-    setVideo(initialVideoState);
+    // setVideo(initialVideoState);
+    resetVideoState();
   }
-  // useEffect(()=>console.log("effecting"),[])
   function handleChange(e) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   }
@@ -52,7 +48,10 @@ function AddVideo({ addVideo, editableVideo, updateVideo }) {
           />
         </div>
         <div>
-          <button onClick={handleSubmit}> {editableVideo?'Update': 'Add'} Video</button>
+          <button onClick={handleSubmit}>
+            {" "}
+            {editMode ? "Update" : "Add"} Video
+          </button>
         </div>
       </form>
     </>
