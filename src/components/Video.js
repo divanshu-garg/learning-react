@@ -8,10 +8,16 @@ function Video({
   verified,
   url,
   children,
+  id,
+  deleteVideo,
+  editVideo,
 }) {
+
   return (
     <>
       <div className="container">
+        <button onClick={()=>deleteVideo(id)} className="close">X</button>
+        <button onClick={()=>editVideo(id)} className="edit">edit</button>
         <div className="pic">
           <img
             src={`${url}`}

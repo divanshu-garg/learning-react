@@ -4,8 +4,8 @@
     float:left;
     min-height: 100%; /* Force all to same height */
     box-sizing: border-box;
+    position: relative;
 }
-
 
 .pic img{
     width:100%;
@@ -25,4 +25,14 @@
 
 .views span{
     padding: 0 0.5em;
+}
+
+
+.close{
+    position: absolute;
+    right:0;
+}
+.edit{
+    position: absolute;
+    right:4em;
 }

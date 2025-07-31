@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AddVideo.css";
 
 const initialVideoState = {
@@ -9,15 +9,25 @@ const initialVideoState = {
   views: "",
 };
 
-function AddVideo({ addVideo }) {
+function AddVideo({ addVideo, editableVideo, updateVideo }) {
   const [video, setVideo] = useState(initialVideoState);
+  
+  useEffect(()=> {
+    if(editableVideo) setVideo(editableVideo);
+  console.log("effect hook used");
+  }
+    , [editableVideo])
 
   function handleSubmit(e) {
     e.preventDefault();
-    addVideo(video);
+    if(editableVideo){
+        updateVideo(video);
+    }else{
+      addVideo(video);
+    }
     setVideo(initialVideoState);
   }
-
+  // useEffect(()=>console.log("effecting"),[])
   function handleChange(e) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   }
@@ -42,7 +52,7 @@ function AddVideo({ addVideo }) {
           />
         </div>
         <div>
-          <button onClick={handleSubmit}>Add a Video</button>
+          <button onClick={handleSubmit}> {editableVideo?'Update': 'Add'} Video</button>
         </div>
       </form>
     </>
