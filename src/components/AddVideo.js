@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import "./AddVideo.css";
 
-function AddVideo({ addVideo, video, setVideo, editMode, updateVideo, resetVideoState }) {
+function AddVideo({ dispatch, video, setVideo, editMode, resetVideoState }) {
   // const [video, setVideo] = useState(initialVideoState);
 
   // useEffect(()=> {
@@ -17,9 +17,12 @@ function AddVideo({ addVideo, video, setVideo, editMode, updateVideo, resetVideo
       return;
     }
     if (editMode) {
-      updateVideo(video);
+      // updateVideo(video);
+      dispatch({type:"UPDATE",payload:video})
     } else {
-      addVideo(video);
+      // addVideo(video);
+    dispatch({ type: "ADD", payload: video });
+
     }
     // setVideo(initialVideoState);
     resetVideoState();

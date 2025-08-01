@@ -9,14 +9,14 @@ function Video({
   url,
   children,
   id,
-  deleteVideo,
+  dispatch,
   editVideo,
 }) {
 
   return (
     <>
       <div className="container">
-        <button onClick={()=>deleteVideo(id)} className="close">X</button>
+        <button onClick={()=>dispatch({ type: "DELETE", payload: id })} className="close">X</button>
         <button onClick={()=>editVideo(id)} className="edit">edit</button>
         <div className="pic">
           <img

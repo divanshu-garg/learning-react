@@ -1,13 +1,13 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
 
-function VideoList({ videos,deleteVideo, editVideo }) {
+function VideoList({ videos,dispatch, editVideo }) {
   return (
     <>
       <div className="video-wrapper">
         {videos.map((v, i) => (
           <Video id={v.id}
-          deleteVideo={deleteVideo}
+          dispatch={dispatch}
           editVideo={editVideo}
             key={v.id}
             title={v.title}
