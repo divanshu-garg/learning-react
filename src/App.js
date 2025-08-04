@@ -5,6 +5,7 @@ import Clock from "./components/Clock";
 import Timer from "./components/Timer";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
+import ThemeContext from "./context/themeContext";
 
 function App() {
   const initialVideoState = {
@@ -46,6 +47,8 @@ function App() {
   // const [videos, setVideos] = useState(videosDB);
   const [video, setVideo] = useState(initialVideoState); // (state liftinf) video is used for input field in addVideo, used in editVideo function and handleSubmit of AddVideo component
 
+  const [siteColor, setSiteColor] = useState('darkMode');
+
   function resetVideoState() {
     setVideo(initialVideoState);
   }
@@ -57,10 +60,12 @@ function App() {
     console.log("editable video:", editMode);
   }
 
-  // edit button click leads to editable becoming that. that triggers useEffect and it puts in input box. when we edit and editable is not null then we trigger update video and that actually will update the video
+  // edit button click leads to editMode becoming true and it puts that video data in input box. when we click submit button and editMode is not null then we trigger update video instead of add video and that actually will update the video
 
   return (
-    <div>
+    <ThemeContext.Provider value = {siteColor}>
+    <div className={`App ${siteColor}`}>
+      <button onClick={()=>setSiteColor(siteColor==='darkMode'?'lightMode':'darkMode')}>Mode</button>
       <AddVideo
         video={video}
         setVideo={setVideo}
@@ -69,7 +74,7 @@ function App() {
         editMode={editMode}
       />
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <h1 style={{ color: "white" }}>Hello from Divanshu</h1>
+        <h1 style={siteColor==='darkMode'? {color:'white'}:{color:'black'}}>Hello from Divanshu</h1>
         <Timer />
         <Clock />
       </div>
@@ -77,6 +82,7 @@ function App() {
 
       {/* <div style={{ clear: "both" }}><Counter/></div> */}
     </div>
+    </ThemeContext.Provider>
   );
 }
 

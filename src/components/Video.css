@@ -7,6 +7,14 @@
     position: relative;
 }
 
+.container.darkMode{
+    color: white;
+}
+
+.container.lightMode{
+    color: rgb(0, 0, 0);
+}
+
 .pic img{
     width:100%;
 }
@@ -14,12 +22,12 @@
 .title{
     font-weight: bold;
     margin-bottom: 1em;
-    color:white;
+    /* color:white; */
 }
 
 .channel, .views{
     font-size: small;
-    color: #ccc;
+    /* color: #ccc; */
     margin-bottom: 0.2em;
 }
 

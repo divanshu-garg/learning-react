@@ -1,9 +1,6 @@
 button{
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(55, 53, 53);
     padding: 1em;
     border-radius: 1.2em;
-    color: black;
     margin: 15px;
     text-align: center;
     cursor: pointer;
@@ -11,4 +8,16 @@ button{
 button:hover{
     background-color: grey;
     color: white;
+}
+
+button.darkMode, .darkMode button{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(55, 53, 53);
+    color: black;
+}
+
+button.lightMode, .lightMode button{
+    background-color: rgb(38, 36, 36);
+    border: 2px solid rgb(194, 176, 176);
+    color: rgb(255, 255, 255);
 }
