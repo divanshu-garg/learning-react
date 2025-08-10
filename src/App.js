@@ -8,6 +8,7 @@ import VideoList from "./components/VideoList";
 import ThemeContext from "./context/themeContext";
 import VideosContext from "./context/videosContext";
 import VideoDispatchContext from "./context/videoDispatch";
+import Counter from "./components/Counter";
 
 function App() {
   const initialVideoState = {
@@ -104,7 +105,7 @@ function App() {
             // dispatch={dispatch}
           />
 
-          {/* <div style={{ clear: "both" }}><Counter/></div> */}
+          <div style={{ clear: "both" }}><Counter/></div>
         </div>
         </VideoDispatchContext.Provider>
       </VideosContext.Provider>
