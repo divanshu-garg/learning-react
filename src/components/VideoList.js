@@ -1,13 +1,19 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
+import useVideos from "../hooks/Videos";
+// import VideosContext from "../context/videosContext";
+// import VideoDispatchContext from "../context/videoDispatch";
 
-function VideoList({ videos,dispatch, editVideo }) {
+function VideoList({editVideo }) {
+  // const videos = useContext(VideosContext);
+  const videos = useVideos();
+  // const dispatch = useContext(VideoDispatchContext);
   return (
     <>
       <div className="video-wrapper">
         {videos.map((v, i) => (
           <Video id={v.id}
-          dispatch={dispatch}
+          // dispatch={dispatch} // eliminated this dispatch prop drilling, directly use from context in Video component
           editVideo={editVideo}
             key={v.id}
             title={v.title}

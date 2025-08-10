@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import "./Video.css";
-import ThemeContext from "../context/themeContext";
+import useVideoDispatch from "../hooks/VideoDispatch";
+import useTheme from "../hooks/theme";
 
 function Video({
   title,
@@ -11,11 +11,14 @@ function Video({
   url,
   children,
   id,
-  dispatch,
+  // dispatch,
   editVideo,
 }) {
 
-  const theme = useContext(ThemeContext);
+  // const theme = useContext(ThemeContext);
+  const theme = useTheme();
+  // const dispatch = useContext(VideoDispatchContext);
+  const dispatch = useVideoDispatch();
 
   return (
     <>

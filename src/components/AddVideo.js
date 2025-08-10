@@ -1,7 +1,8 @@
 // import { useEffect, useState } from "react";
 import "./AddVideo.css";
+import useVideoDispatch from "../hooks/VideoDispatch";
 
-function AddVideo({ dispatch, video, setVideo, editMode, resetVideoState }) {
+function AddVideo({video, setVideo, editMode, resetVideoState }) {
   // const [video, setVideo] = useState(initialVideoState);
 
   // useEffect(()=> {
@@ -9,6 +10,9 @@ function AddVideo({ dispatch, video, setVideo, editMode, resetVideoState }) {
   // console.log("effect hook used");
   // }
   //   , [editableVideo])
+
+  // const dispatch = useContext(VideoDispatchContext);
+  const dispatch = useVideoDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
